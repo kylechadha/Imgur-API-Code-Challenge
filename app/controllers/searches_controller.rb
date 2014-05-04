@@ -8,7 +8,8 @@ class SearchesController < ApplicationController
     end
 
     if params[:search] and params[:search] != ""
-      @results = Search.extract_hashtags(application.user_timeline(params[:search]))
+      # Retrieve a list of the 100 most recent tweets by the specified user and run them through the extract_hashtags method defined on the Search model
+      @results = Search.extract_hashtags(application.user_timeline(params[:search], :count => 100))
     end
 
     # Respond to AJAX javascript calls

@@ -13,8 +13,11 @@ class Search
       end
     end
 
-    # Return a unique list of user hashtags
-    user_hashtags.uniq
+    # Calculate frequency of hashtags used, and sort in descending order
+    user_hashtags = user_hashtags.each_with_object(Hash.new(0)){ |m,h| h[m] += 1 }.sort_by{ |k,v| v }.reverse!
+
+    # Limit the response to the top 10 hashtags used
+    user_hashtags.take(10)
   end  
 
 end
