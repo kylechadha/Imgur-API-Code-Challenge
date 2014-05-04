@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "BuzzFeed Twittah Portal" %></title>
+    <%= favicon_link_tag 'favicon.ico' %>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <!-- Setting the ID to @page allows you to keep your master scss file squeaky clean! -->
+  <body id="<%= @page %>">
+    <%= render partial: 'layouts/navigation' %>
+
+    <%= yield %>
+
+    <!-- Initialize Foundation without having to pull down all of your script tags -->
+    <script>$(document).foundation().foundation('joyride', 'start');</script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<% if params[:search] and params[:search] != "" %>
+
+  <ul>
+    <% @results.each do |tweet| %>
+      <li class="tweet">
+
+        <div class="tweet-image">
+          <%= image_tag("#{tweet.user.profile_image_url}") %>
+        </div>
+
+        <div class="tweet-content">
+          <h1><%= tweet.user.name %></h1>
+          <h2><%= "@#{tweet.user.user_name}" %></h2><br>
+
+          <%= tweet.text %><br>
+          <a href="<%= tweet.uri %>" target="_blank"><%= tweet.uri %></a>
+
+          <span data-tooltip class="has-tip tip-top" title="Favorite me, kthx :]">
+
+            <% if current_user %>
+              <% if current_user.favorited_tweets %>
+                <% favorited = false %>
+                <% current_user.favorited_tweets.each do |favtweet| %>
+                  <% if favtweet.to_i == tweet.id %>
+                    <% favorited = true %>
+                  <% end %>
+                <% end %>
+              <% end %>
+
+              <% if favorited == true %>
+                <i class="fa fa-check-circle-o" style="color: #008CBA;"></i>
+              <% else %>
+                <%= link_to raw('<i class="fa fa-check-circle-o"></i>'), favorite_path(tweet: tweet.id, search: params[:search]), method: 'post' %>
+              <% end %>
+
+            <% else %>
+              <a href="#" data-reveal-id="myModal"><i class="fa fa-check-circle-o"></i></a>
+              <div id="myModal" class="reveal-modal" data-reveal>
+                <h2>Holy crap WHAT ARE YOU DOING?!?!?</h2>
+                <p class="lead">Just kidding, it's no biggie. But, you'll need to sign in before you do that.</p>
+                <a class="close-reveal-modal">&#215;</a>
+              </div>
+            <% end %>
+            
+          </span>
+        </div>
+
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>

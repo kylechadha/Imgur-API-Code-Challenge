@@ -1,0 +1,24 @@
+<% @page = "searches-index" %>
+
+<div class="row">
+
+  <div id="header">
+    <h1>Welcome to the <span>BuzzFeed</span> Tweet Portal</h1>
+    <h2>Search for recent tweets, save your favorites.</h2>
+  </div>
+
+  <div id="search-box">
+    <%= form_tag root_path, method: 'get', id: "search-box" do %>
+      <div id="search-bar">
+        <%= text_field_tag :search, params[:search] %>
+      </div>
+      <div id="search-button" >
+        <%= submit_tag "Rock on!", name: nil, class: 'button' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="search-results">
+    <%= render 'results' %>
+  </div>
+</div>
