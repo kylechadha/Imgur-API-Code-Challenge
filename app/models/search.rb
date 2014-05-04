@@ -16,8 +16,20 @@ class Search
     # Calculate frequency of hashtags used, and sort in descending order
     user_hashtags = user_hashtags.each_with_object(Hash.new(0)){ |m,h| h[m] += 1 }.sort_by{ |k,v| v }.reverse!
 
-    # Limit the response to the top 10 hashtags used
-    user_hashtags.take(10)
-  end  
+    # Limit the response to the top 7 hashtags used
+    user_hashtags.take(7)
+  end
+
+  def self.imgur_search
+    @images = HTTParty.get "https://api.imgur.com/3/gallery/hot/viral/0.json",
+      {
+    #     query: {
+    #       q: "lemons"
+    #     },
+        headers: {
+          "Authorization" => "Client-ID 032ea6a7302fa98"
+        }
+      }
+  end
 
 end

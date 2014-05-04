@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/dncrht/imgur.git
+  revision: 1b3f24a850567e1f6cf0b4d15a9242917657c809
+  specs:
+    imgur (1.0.0)
+      json (>= 1.6.4)
+      oauth (>= 0.4.5)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: e93a4837b0266db46c24aae172e184f57c847b04
   specs:
@@ -237,6 +245,7 @@ DEPENDENCIES
   guard
   guard-livereload
   httparty
+  imgur!
   jbuilder (~> 1.2)
   jquery-rails
   mongoid!

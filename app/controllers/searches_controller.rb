@@ -10,7 +10,18 @@ class SearchesController < ApplicationController
     if params[:search] and params[:search] != ""
       # Retrieve a list of the 100 most recent tweets by the specified user and run them through the extract_hashtags method defined on the Search model
       @results = Search.extract_hashtags(application.user_timeline(params[:search], :count => 100))
+
+      @images = HTTParty.get "https://api.imgur.com/3/gallery/search/viral/0.json?q=icecream",
+        {
+      #     query: {
+      #       q: "lemons"
+      #     },
+          headers: {
+            "Authorization" => "Client-ID 032ea6a7302fa98"
+          }
+        }
     end
+    
 
     # Respond to AJAX javascript calls
     respond_to do |format|

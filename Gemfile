@@ -12,7 +12,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-# Use Pry to debug and Better Errors for better errors
+# Use Pry to debug and Better Errors for better error pages
 gem 'pry'
 group :development do
   gem 'better_errors'
@@ -30,11 +30,9 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
 
-# Use OmniAuth and Twitter gem for API communication
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'twitter', '5.0.0'
+# Use HTTParty and the Twitter gem for API communication
 gem 'httparty'
+gem 'twitter', '5.0.0'
 
 # Use Uglifier as compressor for JavaScript assetss
 gem 'uglifier', '>= 1.3.0'
