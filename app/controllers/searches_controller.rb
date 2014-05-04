@@ -7,11 +7,8 @@ class SearchesController < ApplicationController
       @display = 10
     end
 
-    # If authenticated, use user oauth to search, otherwise use application oauth 
-    if params[:search] and params[:search] != "" and current_user
-      @results = current_user.twitter.search(params[:search], :count => @display, :lang => 'en')
-    elsif params[:search] and params[:search] != ""
-      @results = application.search(params[:search], :count => @display, :lang => 'en')
+    if params[:search] and params[:search] != ""
+      @results = Search.extract_hashtags(application.user_timeline(params[:search]))
     end
 
     # Respond to AJAX javascript calls

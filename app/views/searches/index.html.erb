@@ -3,8 +3,8 @@
 <div class="row">
 
   <div id="header">
-    <h1>Welcome to the <span>BuzzFeed</span> Tweet Portal</h1>
-    <h2>Search for recent tweets, save your favorites.</h2>
+    <h1>Welcome to <span>Tweet</span>Stream</h1>
+    <h2>Enter a twitter handle, and explore a visual world of what that user talks about.</h2>
   </div>
 
   <div id="search-box">
@@ -13,12 +13,13 @@
         <%= text_field_tag :search, params[:search] %>
       </div>
       <div id="search-button" >
-        <%= submit_tag "Rock on!", name: nil, class: 'button' %>
+        <%= submit_tag "Go!", name: nil, class: 'button' %>
       </div>
     <% end %>
   </div>
 
   <div id="search-results">
-    <%= render 'results' %>
+    <%= @results %>
+    <%#= render 'results' %>
   </div>
 </div>
