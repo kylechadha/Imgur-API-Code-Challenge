@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
   helper_method :application
 
   private
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
   def application
     @twitter ||= Twitter::REST::Client.new do |config|
       # Normally you would never leave these exposed

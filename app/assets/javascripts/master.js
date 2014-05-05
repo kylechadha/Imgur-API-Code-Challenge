@@ -1,10 +1,9 @@
-
 // Ready & Page:Load Function
 
 var ready;
 ready = function() {
 
-  // FancyBox
+  // Initalize FancyBox Plugin
   $("a.fancybox").fancybox({
     padding: 0,
     helpers: {
@@ -14,7 +13,7 @@ ready = function() {
     }
   });
 
-  // Isotope
+  // Initialize Isotope Plugin
   var $images = $('#imgur-images');
 
   $images.isotope({
