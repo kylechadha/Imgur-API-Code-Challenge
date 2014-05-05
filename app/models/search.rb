@@ -16,8 +16,8 @@ class Search
     # Calculate frequency of hashtags used, and sort in descending order
     user_hashtags = user_hashtags.each_with_object(Hash.new(0)){ |m,h| h[m.downcase] += 1 }.sort_by{ |k,v| v }.reverse!
 
-    # Limit the response to the top 5 hashtags used
-    user_hashtags.take(5)
+    # Limit the response to the top 6 hashtags used
+    user_hashtags.take(6)
   end
 
   def self.imgur_search(hashtags)

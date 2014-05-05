@@ -13,6 +13,7 @@
       }
     }
     h2 {
+      color: #333;
       margin-top: 2%;
       font-size: rem-calc(24);
     }
@@ -59,12 +60,29 @@
     #invalid-handle {
       text-align: center;
     }
+    #user-hashtags {
+      margin-bottom: 2%;
+      text-align: center;
+      .hashtag {
+        background-color: #58c9f2;
+        display: inline-block;
+        padding: 7px 0 7px 7px;
+        margin: 0 10px 10px 0;
+        margin-right: 10px;
+        color: #333;
+        span {
+          color: white;
+          background-color: #235061;
+          padding: 5px 9px 6px 9px;
+        }
+      }
+    }
     .image-box {
       width: 285px;
       height: 285px;
       background-position: center;
       background-size: cover;
-      border: 8px solid #58c9f3;
+      border: 7px solid #333;
     }
   }
 }

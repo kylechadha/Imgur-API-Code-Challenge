@@ -1,6 +1,16 @@
 <% if params[:search] and params[:search] != "" %>
 
-  <%= @results %>
+  <div id="user-hashtags">
+    <% if @results %>
+
+      <% @results.each do |hashtag, frequency| %>
+        <div class="hashtag">
+          <%= hashtag %>: <span><%= frequency %></span>
+        </div>
+      <% end %>
+      
+    <% end %>
+  </div>
 
   <ul class="large-block-grid-3">
     <% if @images %>
