@@ -34,6 +34,9 @@ gem 'font-awesome-rails'
 gem 'httparty'
 gem 'twitter', '5.0.0'
 
+# Use FancyBox for images galleries
+gem 'fancybox2-rails', '~> 0.2.8'
+
 # Use Uglifier as compressor for JavaScript assetss
 gem 'uglifier', '>= 1.3.0'
 

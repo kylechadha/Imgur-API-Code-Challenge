@@ -21,8 +21,10 @@ class Search
   end
 
   def self.imgur_search(hashtags)
+    # Create an empty hash to store the image URLs
     image_urls = {}
 
+    # For each hashtag conduct an image search via Imgur's API
     hashtags.each do |hashtag|
       search_results = HTTParty.get "https://api.imgur.com/3/gallery/search/viral/0.json",
         {
@@ -34,12 +36,18 @@ class Search
           }
         }
 
+      # Store the URLs in a hash, with the hashtags as keys
       search_results['data'].each do |image|
         image_urls[hashtag[0]] ||= []
-        image_urls[hashtag[0]].push(image['link'])
+        
+        # Validate that the URL is a valid image
+        if image['link'].scan(/[\w-]+\.(gif|png|jpg|jpeg)/).length > 0
+          image_urls[hashtag[0]].push(image['link'])
+        end
       end
     end
 
+    # Return the hash of image URLs
     return image_urls
   end
 
