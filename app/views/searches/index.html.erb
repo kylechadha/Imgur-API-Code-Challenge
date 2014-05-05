@@ -1,6 +1,7 @@
 <% @page = "searches-index" %>
 
 <!-- Handle class where inputted handle does not match any twitter users -->
+<!-- Update favicon! -->
 
 <div class="row">
 
@@ -18,6 +19,12 @@
         <%= submit_tag "Go!", name: nil, class: 'button' %>
       </div>
     <% end %>
+    
+    <div id="invalid-handle">
+      <% unless @images %>
+        <%= @error %>
+      <% end %>
+    </div>
   </div>
 
   <div id="search-results">
