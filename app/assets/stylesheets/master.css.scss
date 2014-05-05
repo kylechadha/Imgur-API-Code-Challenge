@@ -69,7 +69,12 @@
         padding: 7px 0 7px 7px;
         margin: 0 10px 10px 0;
         margin-right: 10px;
-        color: #333;
+        a {
+          color: #333;
+          &:hover {
+            color: black;
+          }
+        }
         span {
           color: white;
           background-color: #235061;

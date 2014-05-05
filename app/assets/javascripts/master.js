@@ -3,6 +3,8 @@
 
 var ready;
 ready = function() {
+
+  // FancyBox
   $("a.fancybox").fancybox({
     padding: 0,
     helpers: {
@@ -10,6 +12,18 @@ ready = function() {
         locked: false
       }
     }
+  });
+
+  // Isotope
+  var $images = $('#imgur-images');
+
+  $images.isotope({
+  });
+
+  $('#user-hashtags a').click(function(){
+    var selector = $(this).attr('data-filter');
+    $images.isotope({ filter: selector });
+    return false;
   });
 };
 

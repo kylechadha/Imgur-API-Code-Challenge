@@ -5,21 +5,21 @@
 
       <% @results.each do |hashtag, frequency| %>
         <div class="hashtag">
-          <%= hashtag %>: <span><%= frequency %></span>
+          <a href="#" data-filter=".<%= hashtag[1..-1] %>"><%= hashtag %></a>: <span><%= frequency %></span>
         </div>
       <% end %>
-      
+
     <% end %>
   </div>
 
-  <ul class="large-block-grid-3">
+  <ul id="imgur-images" class="large-block-grid-3">
     <% if @images %>
       <% @images.each do |hashtag, image_urls| %>
         <% image_urls.each do |image_url| %>
 
-          <li>
+          <li class="<%= hashtag[1..-1] %>">
             <%= link_to(image_url, class: "fancybox", rel: "group") do %>
-              <div class="image-box #{hashtag}" style="background-image: url('<%= image_url %>')" title="<%= hashtag %>"></div>
+              <div class="image-box" style="background-image: url('<%= image_url %>')" title="<%= hashtag %>"></div>
             <% end %>
           </li>
 
