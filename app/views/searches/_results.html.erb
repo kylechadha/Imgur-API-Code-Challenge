@@ -3,12 +3,12 @@
   <%= @results %><br><br>
 
   <%#= @images %>
-  <ul class="large-block-grid-4">
+  <ul class="large-block-grid-3">
     <% @images.each do |hashtag, image_urls| %>
       <% image_urls.each do |image_url| %>
         <li>
           <%= link_to(image_url, class: "fancybox", rel: "group") do %>
-            <div class="image-box #{hashtag}" style="background-image: url('<%= image_url %>')" title="<%= hashtag %>"><%#= image_tag image_url, class: "image-box #{hashtag}", title: "#{hashtag}" %></div>
+            <div class="image-box #{hashtag}" style="background-image: url('<%= image_url %>')" title="<%= hashtag %>"></div>
           <% end %>
         </li>
       <% end %>
