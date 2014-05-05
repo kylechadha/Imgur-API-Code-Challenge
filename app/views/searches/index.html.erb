@@ -12,7 +12,7 @@
   <div id="search-box">
     <%= form_tag root_path, method: 'get', id: "search-box" do %>
       <div id="search-bar">
-        <%= text_field_tag :search, params[:search] %>
+        <span>@</span><%= text_field_tag :search, params[:search] %>
       </div>
       <div id="search-button" >
         <%= submit_tag "Go!", name: nil, class: 'button' %>

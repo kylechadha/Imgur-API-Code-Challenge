@@ -1,99 +1,67 @@
 @import "foundation/functions";
 
-#navigation {
-  // width: 200px;
-  // height: 100%;
-  background-color: #4C5566;
-  // position: fixed
-}
-
 #searches-index {
   #header {
     margin: 0% 5%;
-    margin-top: 4%;
+    margin-top: 3%;
     text-align: center;
     h1 {
+      color: #235061;
       span {
-        color: tomato;
+        color: #58c9f3;
         font-weight: 800;
       }
     }
     h2 {
-      margin-top: 3%;
+      margin-top: 2%;
       font-size: rem-calc(24);
     }
   }
   #search-box {
     margin: 0% 5%;
+    text-align: center;
     #search-bar {
       display: inline-block;
-      width: 85%;
+      width: 30%;
+        text-align: left;
+      input {
+        margin-left: 20px;
+        color: #235061;
+      }
+      span {
+        margin-left: -5px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        position: absolute;
+      }
     }
     #search-button {
       display: inline-block;
       width: 10%;
       margin: 0 2%;
       input[type=submit] {
-        height: 37px;
+        margin-left: 21px;
+        margin-top: 2px;
+        background-color: #A9D96C;
+        color: white;
+        height: 38px;
         padding-top: 0;
         padding-bottom: 0;
+        &:hover {
+          background-color: darken(#A9D96C, 10%)
+        }
       }      
     }
   }
   #search-results {
     margin: 0% 5%;
-    margin-top: 4%;
+    margin-top: 2%;
     .image-box {
       width: 285px;
       height: 285px;
       background-position: center;
       background-size: cover;
-      border: 5px solid #333;
-    }
-    .tweet {
-      list-style: none;
-      border-bottom: 1px solid darken(#F5F8FA, 10%);
-      padding: 5px 0 20px 0;
-      .tweet-image {
-        display: inline-block;
-        margin: 5px;
-        width: 6%;
-        vertical-align: top;
-        img {
-          // Nah, even though Twitter does it, border radii are so last year...
-          // border-radius: 5px;
-        }
-      }
-      .tweet-content {
-        position: relative;
-        display: inline-block;
-        width: 92%;
-        word-wrap: break-word;
-        h1 {
-          display: inline;
-          font-size: 1.2rem;
-          font-weight: bold;
-        }
-        h2 {
-          display: inline;
-          font-size: 0.9rem;
-        }
-        span {
-          position: absolute;
-          top: 0;
-          right: 5px;
-        }
-        i {
-          font-size: 1.4rem;
-          color: #222;
-          &:hover {
-            color: #008CBA;
-          }
-        }
-      }
-      &:hover {
-        background-color: darken(#F5F8FA, 0%);
-      }
+      border: 8px solid #58c9f3;
     }
   }
 }
