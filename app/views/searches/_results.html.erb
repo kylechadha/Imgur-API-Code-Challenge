@@ -1,8 +1,9 @@
 <% if params[:search] and params[:search] != "" %>
 
   <%= @results %>
-  <% @images['data'].each do |image| %>
-    <%= image_tag image['link'] %>
-  <% end %>
 
+  <br><%= @images %>
+  <%# @images.each do |image_url| %>
+    <%#= image_tag image_url %>
+  <%# end %>
 <% end %>
